@@ -1,0 +1,29 @@
+{% extends "vehiculos/padre.html" %}
+
+{% load static %}
+
+{% block titulo_de_pagina %}
+
+<h1 class= "mb-5"> PAGINA DE MOTOS</h1>
+
+{% endblock %}
+
+{% block contenido_que_cambia %}  
+<h2>resultado de buscar motos</h2>
+
+{% if mensaje %}
+
+{{ mensaje }}
+
+{% else %}
+
+{% for moto in motos %}
+
+<h3>{{ moto.marca }}</h3>
+<h3>{{ moto.color }}</h3>
+
+{% endfor %}
+
+{% endif %}
+    
+{% endblock %}

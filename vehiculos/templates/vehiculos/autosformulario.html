@@ -1,0 +1,23 @@
+{% extends "vehiculos/padre.html" %}
+
+{% load static %}
+
+{% block titulo_de_pagina %}
+
+<h1 class= "mb-5"> PAGINA QUE CAMBIA </h1>
+
+{% endblock %}
+
+{% block contenido_que_cambia %}  
+
+<h2>formulario de autos</h2>
+<form action="{% url 'autosformulario' %}" method="POST" > {% csrf_token %}
+
+<table>
+    {{formulario.as_table}}
+</table>
+
+<input type="submit", value="enviar">
+</form>
+
+{% endblock %}
